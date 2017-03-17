@@ -1,4 +1,7 @@
 
-import provideDimensions from './provideDimensions';
+import Program from './Program';
 
-export default provideDimensions;
+export default Program;
+
+export WebGLTypes from './WebGLTypes';
+export * from './Utils';

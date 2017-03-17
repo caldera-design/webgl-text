@@ -1,7 +1,7 @@
 {
-  "name": "provide-dimensions",
+  "name": "gl-program",
   "version": "1.0.0",
-  "description": "A decorator for providing dimensions",
+  "description": "Some basic Webgl utilities",
   "main": "lib/index.js",
   "scripts": {
     "build": "node_modules/.bin/webpack",
@@ -11,17 +11,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/caldera-design/provide-dimensions.git"
+    "url": "https://github.com/caldera-design/gl-program.git"
   },
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
   },
   "dependencies": {
   },
   "devDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
     "babel-core": "^6.10.4",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",

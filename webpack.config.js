@@ -6,7 +6,7 @@ const webpack = require('webpack');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDev = !isProduction;
-const libraryName = 'provide-dimensions';
+const libraryName = 'gl-program';
 
 module.exports = {
     target: 'web',

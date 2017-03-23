@@ -4,3 +4,4 @@ npm-debug.log
 .tmp-globalize-webpack
 .DS_Store
 *.tgz
+tmp

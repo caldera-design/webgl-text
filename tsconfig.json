@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "preserve",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "outDir": "tmp",
+    "noEmitOnError": false,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "lib": [
+        "dom",
+        "es2015",
+        "es2016"
+    ],
+    "pretty": true
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ],
+  "include": [
+    "src",
+    "typings/index.d.ts"
+  ]
+}

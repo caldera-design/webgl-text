@@ -6,7 +6,7 @@ const webpack = require('webpack');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDev = !isProduction;
-const libraryName = 'gl-program';
+const libraryName = 'webgl-text-program';
 
 module.exports = {
     target: 'web',
@@ -16,7 +16,7 @@ module.exports = {
         // Note: entry points must be in arrays to fix a strange bug with webpack
         // See: "A dependency to an entry point is not allowed"
         // https://github.com/webpack/webpack/issues/300
-        index: ['./src/LibraryEntryPoint.js']
+        index: ['./src/LibraryEntryPoint.ts']
     },
     context: __dirname,
     devtool: isProduction ? 'cheap-module-source-map' : 'inline-source-map',
@@ -37,27 +37,17 @@ module.exports = {
             'node_modules',
             path.resolve(__dirname, './node_modules')
         ],
-        extensions: ['', '.js']
+        extensions: ['', '.ts', '.js']
     },
     module: {
         loaders: [
             {
-                test: /\.js$/,
-                loaders: ['babel'],
-                exclude: /node_modules/,
-                presets: ['react']
+                test: /\.(frag|vert)$/,
+                loader: 'raw'
             },
             {
-                test: /\.json$/,
-                loader: 'json'
-            },
-            {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'babel-loader',
-                query: {
-                    cacheDirectory: true
-                }
+                test: /\.ts$/,
+                loader: 'ts'
             }
         ]
     },

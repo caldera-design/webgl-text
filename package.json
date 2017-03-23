@@ -1,5 +1,5 @@
 {
-  "name": "gl-program",
+  "name": "webgl-text-program",
   "version": "1.0.0",
   "description": "Some basic Webgl utilities",
   "main": "lib/index.js",
@@ -11,11 +11,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/caldera-design/gl-program.git"
+    "url": "https://github.com/caldera-design/webgl-text-program.git"
   },
-  "peerDependencies": {
-  },
+  "peerDependencies": {},
   "dependencies": {
+    "@types/lodash": "^4.14.57",
+    "gl-program": "^1.0.0",
+    "vectorize-text": "^3.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
@@ -43,6 +45,11 @@
     "karma-phantomjs-launcher": "1.0.2",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.1",
+    "raw-loader": "^0.5.1",
+    "ts-loader": "^2.0.3",
+    "tslint": "^4.5.1",
+    "tslint-eslint-rules": "^3.5.1",
+    "typescript": "^2.2.1",
     "webpack": "1.14.0",
     "webpack-hot-middleware": "2.15.0"
   }

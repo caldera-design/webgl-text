@@ -8,7 +8,6 @@ import { triangulate, getGlyphVertices } from './Util';
 type RenderParams = {
     position: Vertex;
     resolution: Size;
-    size: Size;
     center: Vertex;
     rotation: number;
 };
@@ -56,7 +55,7 @@ export default class WebGLText extends Program {
         this.triangles = triangles;
     }
 
-    public render({ position, rotation, center, resolution, size }: RenderParams) {
+    public render({ position, rotation, center, resolution }: RenderParams) {
         const { triangles } = this;
         if (!triangles || !triangles.length) {
             return;

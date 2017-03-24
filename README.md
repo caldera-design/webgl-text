@@ -3,6 +3,13 @@ WebGL Text
 
 Write text onto a WebGL canvas 🔥
 
+Installation
+============
+Use [npm](https://www.npmjs.com/) to install:
+```bash
+npm install webgl-text
+```
+
 Example
 ============
 

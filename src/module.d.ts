@@ -1,4 +1,6 @@
 
+declare function require(path: string): string;
+
 declare module 'gl-program' {
 
     export type WebGLTypeName = 'FLOAT';
@@ -38,7 +40,7 @@ declare module 'gl-program' {
 }
 
 declare module 'vectorize-text' {
-    export type VectorizeTextParams = {
+    type VectorizeTextParams = {
         triangles: boolean;
         textBaseline: string;
         textAlign: string;
@@ -48,28 +50,32 @@ declare module 'vectorize-text' {
         font: string;
     };
 
-    export type Triangles = {
+    type Triangles = {
         cells: [[number, number, number]];
         positions: [[number, number]];
     };
 
-    export default function vectorizeText(text: string, params: VectorizeTextParams): Triangles;
+    function vectorizeText(text: string, params: VectorizeTextParams): Triangles;
+
+    export = vectorizeText;
 }
 
 declare module '*.frag' {
   const content: string;
-  export default content;
+  export = content;
 }
 
 declare module '*.vert' {
   const content: string;
-  export default content;
+  export = content;
 }
 
 type Vertex = {
     x: number;
     y: number;
 };
+
+type TriangleVertices = [Vertex, Vertex, Vertex];
 
 type Size = {
     width: number;

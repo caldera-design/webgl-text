@@ -6,7 +6,7 @@ const webpack = require('webpack');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDev = !isProduction;
-const libraryName = 'webgl-text-program';
+const libraryName = 'webgl-text';
 
 module.exports = {
     target: 'web',

@@ -1,7 +1,7 @@
 {
-  "name": "webgl-text-program",
+  "name": "webgl-text",
   "version": "1.0.0",
-  "description": "Some basic Webgl utilities",
+  "description": "Render Text in WebGL",
   "main": "lib/index.js",
   "scripts": {
     "build": "node_modules/.bin/webpack",
@@ -11,12 +11,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/caldera-design/webgl-text-program.git"
+    "url": "https://github.com/caldera-design/webgl-text.git"
   },
   "peerDependencies": {},
   "dependencies": {
     "@types/lodash": "^4.14.57",
     "gl-program": "^1.0.0",
+    "lodash": "^4.17.4",
     "vectorize-text": "^3.0.2"
   },
   "devDependencies": {

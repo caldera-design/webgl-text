@@ -1,4 +1,4 @@
 
-import WebGLTextProgram from './WebGLTextProgram';
+import WebGLText from './WebGLText';
 
-export default WebGLTextProgram;
+export default WebGLText;

@@ -1,19 +1,22 @@
 
 import Program, { WebGLTypes, ProgramParams } from 'gl-program';
 
-import glyphFragmentShader from '../shaders/glyph.frag';
-import glyphVertexShader from '../shaders/glyph.vert';
+import * as glyphFragmentShader from '../shaders/glyph.frag';
+import * as glyphVertexShader from '../shaders/glyph.vert';
 import { triangulate, getGlyphVertices } from './Util';
 
 type RenderParams = {
+    position: Vertex;
+    resolution: Size;
+    size: Size;
+    center: Vertex;
+    rotation: number;
+};
+
+type SetTextParams = {
     text: string;
     fontFamily: string;
     fontSize: number;
-    resolution: Size;
-    size: Size;
-    position: Vertex;
-    center: Vertex;
-    rotation: number;
 };
 
 const program: ProgramParams = {
@@ -37,20 +40,28 @@ const program: ProgramParams = {
   }
 };
 
-export default class WebGLTextProgram extends Program {
+export default class WebGLText extends Program {
+
+    private triangles: [TriangleVertices] = <[TriangleVertices]>[];
+
     constructor(gl: WebGLRenderingContext) {
       super(gl, program);
     }
 
-    public render({ text, fontFamily, position, rotation, center, fontSize, resolution, size }: RenderParams) {
-        const triangles = triangulate({ text, fontFamily, position, fontSize, size, rotation, center });
+    public setText({ text, fontFamily, fontSize }: SetTextParams) {
+        const triangles = triangulate({ text, fontFamily, fontSize });
         if (!triangles.length) {
             return;
         }
-        const vertices = getGlyphVertices(triangles);
-        if (!vertices || !vertices.length) {
+        this.triangles = triangles;
+    }
+
+    public render({ position, rotation, center, resolution, size }: RenderParams) {
+        const { triangles } = this;
+        if (!triangles || !triangles.length) {
             return;
         }
+        const vertices = getGlyphVertices(triangles, position);
         const { width, height } = resolution;
         this.begin();
         this.setUniform('resolution', new Float32Array([width, height]));

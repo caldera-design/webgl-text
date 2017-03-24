@@ -1,6 +1,6 @@
 {
   "name": "webgl-text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Render Text in WebGL",
   "main": "lib/index.js",
   "scripts": {

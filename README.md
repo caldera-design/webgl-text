@@ -1,12 +1,12 @@
-Write Text in WebGL
+WebGL Text
 ---------------
 
-Write text onto a WebGL canvas.
+Write text onto a WebGL canvas 🔥
 
 Example
 ============
 
-This example uses the [`webgl-canvas` package](https://www.npmjs.com/package/webgl-canvas), but this library can be used with any webgl canvas.
+The example uses [`webgl-canvas`](https://www.npmjs.com/package/webgl-canvas), but this library can be used with any webgl canvas.
 
 ```typescript
 

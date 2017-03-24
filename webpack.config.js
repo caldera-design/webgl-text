@@ -37,7 +37,7 @@ module.exports = {
             'node_modules',
             path.resolve(__dirname, './node_modules')
         ],
-        extensions: ['', '.ts', '.js']
+        extensions: ['', '.ts', '.js', '.frag', '.vert']
     },
     module: {
         loaders: [
@@ -47,7 +47,15 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                loader: 'ts'
+                loaders: ['babel', 'awesome-typescript-loader'],
+                exclude: /node_modules/,
+                presets: ['react']
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                exclude: /node_modules/,
+                presets: ['react']
             }
         ]
     },
@@ -61,9 +69,7 @@ function combinePlugins(...plugins) {
 function getPlugins() {
   return [
     new webpack.DefinePlugin({
-        'process.env': {
-            'NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('dev')
-        },
+        'process.env.NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('dev'),
         PROJECT_ROOT: path.join('"', __dirname, '"'),
         'typeof window': JSON.stringify('object')
     })

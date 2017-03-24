@@ -10,13 +10,17 @@
     "outDir": "tmp",
     "noEmitOnError": false,
     "moduleResolution": "node",
+    "importHelpers": true,
     "experimentalDecorators": true,
+    "pretty": true,
     "lib": [
         "dom",
         "es2015",
         "es2016"
     ],
-    "pretty": true
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
   "exclude": [
     "node_modules",

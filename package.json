@@ -20,6 +20,7 @@
     "vectorize-text": "^3.0.2"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^3.1.2",
     "babel-core": "^6.10.4",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",
@@ -47,6 +48,7 @@
     "karma-webpack": "2.0.1",
     "raw-loader": "^0.5.1",
     "ts-loader": "^2.0.3",
+    "tslib": "^1.6.0",
     "tslint": "^4.5.1",
     "tslint-eslint-rules": "^3.5.1",
     "typescript": "^2.2.1",

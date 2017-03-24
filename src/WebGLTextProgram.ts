@@ -1,8 +1,8 @@
 
 import Program, { WebGLTypes, ProgramParams } from 'gl-program';
 
-import glyphFragmentShader from './shaders/glyph.frag';
-import glyphVertexShader from './shaders/glyph.vert';
+import glyphFragmentShader from '../shaders/glyph.frag';
+import glyphVertexShader from '../shaders/glyph.vert';
 import { triangulate, getGlyphVertices } from './Util';
 
 type RenderParams = {

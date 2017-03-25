@@ -16,6 +16,7 @@ type SetTextParams = {
     text: string;
     fontFamily: string;
     fontSize: number;
+    textAlign: string;
 };
 
 const program: ProgramParams = {
@@ -47,8 +48,8 @@ export default class WebGLText extends Program {
       super(gl, program);
     }
 
-    public setText({ text, fontFamily, fontSize }: SetTextParams) {
-        const triangles = triangulate({ text, fontFamily, fontSize });
+    public setText({ text, fontFamily, fontSize, textAlign }: SetTextParams) {
+        const triangles = triangulate({ text, fontFamily, fontSize, textAlign });
         if (!triangles.length) {
             return;
         }

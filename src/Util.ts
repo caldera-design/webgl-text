@@ -8,17 +8,18 @@ type TriangulateParams = {
     text: string;
     fontFamily: string;
     fontSize: number;
+    textAlign: string;
 };
 
 const VECTORIZE_BASE_PARAMS = {
     triangles: true,
-    textBaseline: 'ideographic',
-    textAlign: 'left'
+    textBaseline: 'ideographic'
 };
 
-export function triangulate({ text, fontFamily, fontSize }: TriangulateParams): [TriangleVertices] {
+export function triangulate({ text, fontFamily, fontSize, textAlign = 'left' }: TriangulateParams): [TriangleVertices] {
     const { cells, positions } = vectorizeText(text, {
         ...VECTORIZE_BASE_PARAMS,
+        textAlign,
         size: fontSize,
         lineHeight: fontSize,
         height: fontSize,
